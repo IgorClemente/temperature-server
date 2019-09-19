@@ -26,14 +26,6 @@ dummy.stdout.on("data", function(data) {
   currentTemperature = data.toString();
 });
 
-server.get("/temperature", (req, res) => {
-  res.json({
-    temperature: currentTemperature
-  });
-});
-
-server.listen(3000);
-/** 
 ref.on("value", function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     var key = childSnapshot.key;
@@ -43,9 +35,5 @@ ref.on("value", function(snapshot) {
   });
 
   console.log(entitiesFromAssistant);
-
-  if (entitiesFromAssistant.read) {
-  
-  }
-}); // ref.on('value', function (snapshot)
-**/
+  ref.set({ temperature: currentTemperature });
+});
