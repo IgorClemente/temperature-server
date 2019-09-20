@@ -21,7 +21,7 @@ setInterval(() => {
   PythonShell.run("humidity.py", null, function(err, result) {
     if (err) throw err;
     console.log("finished", result);
-    ref.set({ temperature: result });
+    ref.set({ temperature: result[0] });
   });
 }, 20000);
 
