@@ -54,7 +54,7 @@ def dummy() :
 
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    draw.text((x, top+16), str(temperature) + "°C",  font=font, fill=255)
+    draw.text((x, top+16), str("{:.0f}".format(temperature)) + "°C",  font=font, fill=255)
 
     disp.image(image)
     disp.display()
