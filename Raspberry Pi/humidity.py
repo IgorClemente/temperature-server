@@ -40,7 +40,7 @@ bottom = height-padding
 x = 0
 
 font = ImageFont.load_default()
-font = ImageFont.truetype('Minecraftia-Regular.ttf', 16)
+font = ImageFont.truetype('Minecraftia-Regular.ttf', 18)
 
 def dummy() :
     DHT_SENSOR = Adafruit_DHT.DHT22
@@ -54,7 +54,7 @@ def dummy() :
 
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    draw.text((x, top+16), str("{:.0f}".format(temperature)) + "°C",  font=font, fill=255)
+    draw.text((x, top+10), str("{:.0f}".format(temperature)) + "°C",  font=font, fill=255)
 
     disp.image(image)
     disp.display()
