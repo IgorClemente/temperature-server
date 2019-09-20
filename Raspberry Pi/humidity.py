@@ -41,6 +41,7 @@ x = 0
 
 font = ImageFont.load_default()
 
+disp.setFont(&FreeSans9pt7b);
 
 def dummy() :
     DHT_SENSOR = Adafruit_DHT.DHT22
