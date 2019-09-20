@@ -28,9 +28,14 @@ dummy.stdout.on("data", function(data) {
 });
 **/
 
-PythonShell.run("humidity.py", null, function(err) {
+PythonShell.run("humidity.py", null, function(err, result) {
   if (err) throw err;
-  console.log("finished");
+  console.log("finished", result);
+
+  PythonShell.run("humidity.py", null, function(err, result) {
+    if (err) throw err;
+    console.log("finished", result);
+  });
 });
 
 ref.on("value", function(snapshot) {
