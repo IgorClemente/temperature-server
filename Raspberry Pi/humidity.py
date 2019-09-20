@@ -51,7 +51,7 @@ def dummy() :
 
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    draw.text((x, top+16), str(temperature) + "°C",  font=font, fill=255)
+    
 
     disp.draw_text2(0,0,str(temperature) + "°C",2)
     disp.display()
