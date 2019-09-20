@@ -39,8 +39,6 @@ bottom = height-padding
 
 x = 0
 
-disp.setFont(ArialMT_Plain_10);
-
 def dummy() :
     DHT_SENSOR = Adafruit_DHT.DHT22
     DHT_PIN = 4
