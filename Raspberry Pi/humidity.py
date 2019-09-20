@@ -11,7 +11,7 @@ def dummy() :
         humidity,temp = Adafruit_DHT.read_retry(DHT_SENSOR, DHT_PIN)
         temperature = temp 
         time.sleep(0.1)
-    print temperature
+    print (temperature)
     temperature = None
 if __name__ =='__main__' :
     dummy = dummy()
