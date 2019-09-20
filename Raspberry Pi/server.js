@@ -1,4 +1,5 @@
 var admin = require("firebase-admin");
+const numeral = require("numeral");
 
 var express = require("express");
 const server = express();
@@ -21,7 +22,7 @@ setInterval(() => {
   PythonShell.run("humidity.py", null, function(err, result) {
     if (err) throw err;
     console.log("finished", result);
-    ref.set({ temperature: result[0] });
+    ref.set({ temperature: numeral(result[0]).format("00") });
   });
 }, 20000);
 

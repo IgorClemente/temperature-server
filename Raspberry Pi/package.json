@@ -12,6 +12,7 @@
   "dependencies": {
     "express": "^4.17.1",
     "firebase-admin": "^6.4.0",
+    "numeral": "^2.0.6",
     "python-shell": "^1.0.8"
   }
 }
