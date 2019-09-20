@@ -40,7 +40,7 @@ bottom = height-padding
 x = 0
 
 font = ImageFont.load_default()
-font = ImageFont.truetype('Minecraftia-Regular.ttf', 8)
+font = ImageFont.truetype('Minecraftia-Regular.ttf', 16)
 
 def dummy() :
     DHT_SENSOR = Adafruit_DHT.DHT22
