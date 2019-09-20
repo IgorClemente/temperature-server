@@ -3,6 +3,8 @@ var admin = require("firebase-admin");
 var express = require("express");
 const server = express();
 
+var PythonShell = require("python-shell");
+
 var fs = require("fs");
 var sys = require("sys");
 var spawn = require("child_process").spawn;
@@ -20,8 +22,16 @@ var ref = defaultDatabase.ref();
 
 entitiesFromAssistant = {};
 
+/** 
 dummy.stdout.on("data", function(data) {
   ref.set({ temperature: data.toString() });
+});
+**/
+
+PythonShell.run("humidity.py", options, function(err, results) {
+  if (err) throw err;
+
+  console.log("results: %j", results);
 });
 
 ref.on("value", function(snapshot) {
