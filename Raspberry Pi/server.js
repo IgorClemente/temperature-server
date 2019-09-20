@@ -28,7 +28,7 @@ dummy.stdout.on("data", function(data) {
 });
 **/
 
-PythonShell.run("humidity.py", options, function(err, results) {
+PythonShell.run("humidity.py", {}, function(err, results) {
   if (err) throw err;
 
   console.log("results: %j", results);
