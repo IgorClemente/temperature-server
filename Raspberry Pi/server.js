@@ -3,7 +3,7 @@ var admin = require("firebase-admin");
 var express = require("express");
 const server = express();
 
-var PythonShell = require("python-shell");
+const { PythonShell } = require("python-shell");
 
 var fs = require("fs");
 var sys = require("sys");
@@ -28,10 +28,9 @@ dummy.stdout.on("data", function(data) {
 });
 **/
 
-PythonShell.run("humidity.py", {}, function(err, results) {
+PythonShell.run("humidity.py", null, function(err) {
   if (err) throw err;
-
-  console.log("results: %j", results);
+  console.log("finished");
 });
 
 ref.on("value", function(snapshot) {
