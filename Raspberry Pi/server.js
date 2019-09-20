@@ -4,8 +4,8 @@ var express = require("express");
 const server = express();
 
 var fs = require("fs");
-var sys = required("sys");
-var spawn = required("child_process").spawn;
+var sys = require("sys");
+var spawn = require("child_process").spawn;
 var dummy = spawn("python", ["humidity.py"]);
 
 var serviceAccount = require("./serviceAccountKey.json");
@@ -26,6 +26,8 @@ dummy.stdout.on("data", function(data) {
   currentTemperature = data.toString();
 });
 
+ref.set({ temperature: currentTemperature });
+
 ref.on("value", function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
     var key = childSnapshot.key;
@@ -35,5 +37,4 @@ ref.on("value", function(snapshot) {
   });
 
   console.log(entitiesFromAssistant);
-  ref.set({ temperature: currentTemperature });
 });
