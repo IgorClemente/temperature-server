@@ -39,9 +39,7 @@ bottom = height-padding
 
 x = 0
 
-font = ImageFont.load_default()
-
-disp.setFont(&FreeSans9pt7b);
+disp.setFont(ArialMT_Plain_10);
 
 def dummy() :
     DHT_SENSOR = Adafruit_DHT.DHT22
