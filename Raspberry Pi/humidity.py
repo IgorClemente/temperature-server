@@ -39,6 +39,8 @@ bottom = height-padding
 
 x = 0
 
+font = ImageFont.load_default()
+
 def dummy() :
     DHT_SENSOR = Adafruit_DHT.DHT22
     DHT_PIN = 4
@@ -51,9 +53,9 @@ def dummy() :
 
     draw.rectangle((0,0,width,height), outline=0, fill=0)
 
-    
+    draw.text((x, top+16), str(temperature) + "°C",  font=font, fill=255)
 
-    disp.draw_text2(0,0,str(temperature) + "°C",2)
+    disp.image(image)
     disp.display()
     time.sleep(.1)
 
