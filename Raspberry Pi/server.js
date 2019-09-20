@@ -20,13 +20,9 @@ var ref = defaultDatabase.ref();
 
 entitiesFromAssistant = {};
 
-const currentTemperature = "";
-
 dummy.stdout.on("data", function(data) {
-  currentTemperature = data.toString();
+  ref.set({ temperature: data.toString() });
 });
-
-ref.set({ temperature: currentTemperature });
 
 ref.on("value", function(snapshot) {
   snapshot.forEach(function(childSnapshot) {
