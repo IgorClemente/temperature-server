@@ -55,7 +55,7 @@ def dummy() :
 
     draw.text((x, top+16), str(temperature) + "°C",  font=font, fill=255)
 
-    disp.image(image)
+    disp.draw_text2(0,0,str(temperature) + "°C",2)
     disp.display()
     time.sleep(.1)
 
