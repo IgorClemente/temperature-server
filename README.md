@@ -34,6 +34,8 @@
 
 ## :rocket: Descrição
 
+Projeto de IOT para fazer leitura de temperatura via Raspberry, interligado ao Google Assistant.
+
 ## :hammer: Iniciando a aplicação
 
 Para executar os testes execute os seguintes comandos:
